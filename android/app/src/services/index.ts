@@ -1,7 +1,9 @@
 
 import axios from 'axios';
 
-const baseURL = 'http://10.0.2.2:5000'; // Change this to the correct IP or domain
+const baseURL = __DEV__
+? 'http://10.0.2.2:5000' // Local development
+: 'https://salon-app-backend-7vcq.onrender.com'; // Production
 
 const AuthService = {
   sendLoginOTP: async (phoneNumber: string, name: string, age: number, gender: string) => {
